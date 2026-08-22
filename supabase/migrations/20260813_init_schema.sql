@@ -102,3 +102,6 @@ CREATE POLICY "ai_logs_update_policy" ON ai_logs
 
 CREATE POLICY "ai_logs_delete_policy" ON ai_logs
     FOR DELETE USING (auth.uid() IS NOT NULL);
+
+-- Enable Realtime publication for appointments table
+ALTER PUBLICATION supabase_realtime ADD TABLE appointments;
